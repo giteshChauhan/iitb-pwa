@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/icons/icon-512x512.png">
-    <!-- <link rel="manifest" href="manifest.json"> -->
+    <link rel="manifest" href="manifest.json">
     <!-- ios support -->
     <link rel="apple-touch-icon" href="images/icons/icon-72x72.png">
     <link rel="apple-touch-icon" href="images/icons/icon-96x96.png">
@@ -26,11 +26,95 @@
     <main>
       <nav>
         <h1>Chemical Supplies</h1>
-        <div class="tools"></div>
+
+        <!-- Tools Set -->
+        <div class="tools">
+          <span id='tool-add'><svg style="color: blue;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="currentColor" class='tool' draggable={false} height='24'>
+              <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                clip-rule="evenodd" />
+            </svg></span>
+          <span id='tool-edit'><svg xmlns="http://www.w3.org/2000/svg" style="color:gray;" viewBox="0 0 24 24"
+              fill="currentColor" height="24" class="tool">
+              <path
+                d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+              <path
+                d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+            </svg>
+          </span>
+          <span id='tool-down'>
+            <svg style="color: gray;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class='tool' draggable={false} height='24'>
+              <path fill-rule="evenodd"
+                d="M12 2.25a.75.75 0 0 1 .75.75v16.19l6.22-6.22a.75.75 0 1 1 1.06 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 1 1 1.06-1.06l6.22 6.22V3a.75.75 0 0 1 .75-.75Z"
+                clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span id='tool-up'><svg style="color: gray;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="currentColor" class='tool' draggable={false} height='24'>
+              <path fill-rule="evenodd"
+                d="M11.47 2.47a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-6.22-6.22V21a.75.75 0 0 1-1.5 0V4.81l-6.22 6.22a.75.75 0 1 1-1.06-1.06l7.5-7.5Z"
+                clip-rule="evenodd" />
+            </svg></span>
+          <span id='tool-delete'><svg style="color: gray;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="currentColor" class='tool' draggable={false} height='24'>
+              <path fill-rule="evenodd"
+                d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                clip-rule="evenodd" />
+            </svg></span>
+          <span id='tool-refresh'><svg style="color: blue;" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg" class='tool' draggable={false} height='24'>
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M3 3V8M3 8H8M3 8L6 5.29168C7.59227 3.86656 9.69494 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.71683 21 4.13247 18.008 3.22302 14"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+            </svg></span>
+          <span id='tool-save'><svg style="color: blue;" version="1.1" id="_x32_" class='tool' draggable={false}
+              height='24' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512" xml:space="preserve" fill="currentColor">
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <path class="st0"
+                    d="M505.604,112.227L399.764,6.397C395.701,2.333,390.079,0,384.332,0H76.956C66.398,0,56.218,2.153,46.992,6.055 C33.154,11.919,21.451,21.649,13.154,33.92C9.019,40.055,5.721,46.83,3.46,54.082C1.208,61.326,0,69.037,0,76.947v358.096 c0,10.568,2.153,20.74,6.055,29.956c5.864,13.838,15.594,25.55,27.865,33.847c6.135,4.145,12.919,7.433,20.162,9.694 c7.244,2.253,14.955,3.46,22.874,3.46h358.087c10.56,0.009,20.74-2.162,29.956-6.063c13.847-5.856,25.55-15.577,33.848-27.856 c4.144-6.136,7.432-12.92,9.693-20.163c2.253-7.243,3.46-14.946,3.46-22.874V127.669C512,121.921,509.676,116.299,505.604,112.227z M279.789,44.1h51.668v63.497h-51.668V44.1z M468.342,435.044c0,4.649-0.936,8.974-2.603,12.955 c-2.514,5.947-6.766,11.063-12.099,14.668c-2.658,1.802-5.577,3.207-8.694,4.18c-3.108,0.973-6.406,1.495-9.902,1.495H76.956 c-4.658,0-8.972-0.937-12.946-2.612c-5.946-2.514-11.082-6.757-14.676-12.09c-1.794-2.658-3.208-5.577-4.181-8.694 c-0.972-3.108-1.495-6.406-1.495-9.902V76.947c0-4.649,0.937-8.973,2.604-12.937c2.513-5.955,6.774-11.082,12.099-14.676 c2.658-1.794,5.577-3.217,8.685-4.172c3.117-0.973,6.414-1.495,9.91-1.495h64.587v89.299h228.922V43.668h4.829l93.046,93.046 V435.044z">
+                  </path>
+                  <rect x="112.768" y="220.275" class="st0" width="286.474" height="193.165"></rect>
+                </g>
+              </g>
+            </svg></span>
+        </div>
       </nav>
-      <table class="table"></table>
+
+      <!-- Chemicals Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th id="table-head-select-all"><svg style="color:gray;" xmlns="http://www.w3.org/2000/svg" class='tool'
+                draggable={false} viewBox="0 0 16 16" fill="currentColor" height='24'>
+                <path fill-rule="evenodd"
+                  d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                  clip-rule="evenodd" />
+              </svg></th>
+            <th onclick="sortTable(1)" class="asc">Id</th>
+            <th onclick="sortTable(2)">Chemical Name</th>
+            <th onclick="sortTable(3)">Vendor</th>
+            <th onclick="sortTable(4)">Density</th>
+            <th onclick="sortTable(5)">Viscosity</th>
+            <th onclick="sortTable(6)">Packaging</th>
+            <th onclick="sortTable(7)">Pack Size</th>
+            <th onclick="sortTable(8)">Unit</th>
+            <th onclick="sortTable(9)">Quantity</th>
+          </tr>
+        </thead>
+        <!-- Table Body Data (Asserted Dynamically) -->
+        <tbody class="tbody"></tbody>
+      </table>
     </main>
     <script type="module" src="js/app.js"></script>
+    <script type="text/javascript" src="js/utils.js">sortTable()</script>
   </body>
 
 </html>
